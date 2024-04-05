@@ -1,12 +1,33 @@
 Package: pRedictwine
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Title: Aids in the workflow of a linear regression analysis
+Version: 0.0.1
+Authors@R: c(
+    person("Rui", "Xiang Yu", , "xxiangyu@student.ubc.ca", role = c("aut", "cre")),
+    person("Rico", "Chan", , "xxiangyu@student.ubc.ca", role = "aut"),
+    person("Kevin", "Yu", , "xxiangyu@student.ubc.ca", role = "aut"))
+Description: Contains 3 functions that are aimed to help in the workflow of a linear 
+    regression analysis. Such functions are one to load an online dataset and change the 
+    columns' names, another to create appropriate histograms, and a last one to directly 
+    create the linear regression model. This package was created mainly for the prediction 
+    of wine quality through MLR, found in 
+    https://github.com/DSCI-310-2024/dsci-310_group-7_wine-quality-prediction.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.1
+Imports: 
+    ggplot2,
+    magrittr,
+    parsnip,
+    readr,
+    recipes,
+    rlang,
+    workflows,
+    workflowsets
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Depends: 
+    tidymodels,
+    tidyverse,
+    vdiffr

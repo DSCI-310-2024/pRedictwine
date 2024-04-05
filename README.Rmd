@@ -1,0 +1,73 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# pRedictwine
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of pRedictwine is to aid in the workflow of a linear regression analysis.
+It provides functions that could aid in the steps of loading and tidying the data,
+histograms for exploratory analysis, and creating the linear regression model.
+
+Contains 3 functions that are aimed to help in the workflow of a linear regression analysis. Such functions are one to load an online dataset and change the columns' names, another to create appropriate histograms, and a last one to directly create the linear regression model. This package was created mainly for the prediction of wine quality through MLR, found in  https://github.com/DSCI-310-2024/dsci-310_group-7_wine-quality-prediction.
+
+## Installation
+
+You can install the development version of pRedictwine from [GitHub](https://github.com/DSCI-310-2024/pRedictwine) with:
+
+``` r
+# install.packages("pRedictwine")
+devtools::install_github("DSCI-310-2024/pRedictwine")
+```
+
+## Usage
+
+1. Loading a dataset from an URL and changing its column names:
+When you want to load an online dataset from an URL and at the same time change the names of the columns, you can do so with load_W_new_col().
+
+```{r}
+library(pRedictwine)
+
+dataset_path <- "https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv"
+
+col_names <- c("fixed_acidity", "volatile_acidity", "citric_acid", "residual_sugar", "chlorides", "free_sulfur_dioxide", "total_sulfur_dioxide", "density", "pH", "sulphates",
+ "alcohol", "quality")
+
+delimiter <- ";"
+
+dataset <- load_w_new_col(dataset_path, col_names, delimiter)
+```
+
+2. Create a histogram:
+If you want to create a histogram with x labels, different coloured values by group, and specifiable x-axis, y-axis, labels; you can do so with create_histogram().
+
+```{r}
+library(pRedictwine)
+
+create_histogram(dataset, x = chlorides, group = quality,
+                  x_lab = "Chlorides", y_lab = "Count", font_size = 10.5)
+
+```
+
+3. Create a model:
+If you want to create a fitted linear regression model, you can do so with fit_linear_reg().
+
+```{r}
+library(pRedictwine)
+
+fit_linear_reg(quality ~ ., dataset)
+
+```

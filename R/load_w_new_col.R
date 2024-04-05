@@ -13,7 +13,7 @@
 #' @export
 #'
 #' @examples
-#' load_w_new_col(https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv,
+#' load_w_new_col("https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv",
 #' c("fixed_acidity", "volatile_acidity", "citric_acid",
 #' "residual_sugar", "chlorides", "free_sulfur_dioxide",
 #' "total_sulfur_dioxide", "density", "pH", "sulphates",
