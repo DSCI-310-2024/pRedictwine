@@ -21,5 +21,5 @@ Specifies a linear regression model, creates a recipe, and bundles them into
 a workflow. Applies workflow to training data to return a fitted model.
 }
 \examples{
-fit_linear_reg(quality ~ ., training)
+fit_linear_reg(mpg ~ ., mtcars)
 }

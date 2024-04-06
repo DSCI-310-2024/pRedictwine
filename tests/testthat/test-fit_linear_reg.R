@@ -1,6 +1,4 @@
-library(testthat)
-library(tidyverse)
-library(tidymodels)
+library(workflowsets)
 
 test_that("`fit_linear_reg` should return a fitted linear regression model
           object containing fitted model objects", {

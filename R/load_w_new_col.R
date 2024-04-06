@@ -13,11 +13,11 @@
 #' @export
 #'
 #' @examples
-#' load_w_new_col("https://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv",
-#' c("fixed_acidity", "volatile_acidity", "citric_acid",
-#' "residual_sugar", "chlorides", "free_sulfur_dioxide",
-#' "total_sulfur_dioxide", "density", "pH", "sulphates",
-#' "alcohol", "quality"), ";")
+#' load_w_new_col("https://raw.githubusercontent.com/plotly/datasets/master/mtcars.csv",
+#' c("model", "milespergallon", "cylinder_number",
+#' "displacement", "horsepower", "rear_axle_ratio",
+#' "weight", "quartermiletime", "engine", "transmission",
+#' "forwardgears", "carb"), ",")
 
 load_w_new_col <- function(dataset_path, col_names, delimiter) {
   # returns loaded dataset with new column names

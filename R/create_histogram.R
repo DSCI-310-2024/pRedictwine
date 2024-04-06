@@ -21,8 +21,8 @@
 #' @export
 #'
 #' @examples
-#' create_histogram(df = training, x = chlorides, group = quality,
-#'                  x_lab = "Chlorides", font_size = 10.5)
+#' create_histogram(df = mtcars, x = mpg, group = am,
+#'                  x_lab = "Miles/(US) gallon", y_lab = "Count", font_size = 10.5)
 #'
 create_histogram <- function(df,
                              x,
@@ -40,7 +40,7 @@ create_histogram <- function(df,
                    legend.position="none")
 
   if(y_lab == "") {
-    histogram <- histogram + ggplot2::theme(axis.title.y = element_blank())
+    histogram <- histogram + ggplot2::theme(axis.title.y = ggplot2::element_blank())
   }
 
   return(histogram)

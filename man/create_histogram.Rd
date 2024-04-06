@@ -33,7 +33,7 @@ to a workflow where the input is training data, and the workflow is used
 alongside cowplot commands to create the visualization.
 }
 \examples{
-create_histogram(df = training, x = chlorides, group = quality,
-                 x_lab = "Chlorides", font_size = 10.5)
+create_histogram(df = mtcars, x = mpg, group = am,
+                 x_lab = "Miles/(US) gallon", y_lab = "Count", font_size = 10.5)
 
 }

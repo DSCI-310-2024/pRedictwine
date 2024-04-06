@@ -1,6 +1,3 @@
-library(testthat)
-library(tidyverse)
-
 test_that("function should return a dataset as a tibble with new column names", {
   dataset_path <- "https://raw.githubusercontent.com/DSCI-310-2024/dsci-310_group-7_wine-quality-prediction/function-load-data/tests/testthat/simple_dataset.csv"
   col_names <- c("A", "B", "C", "D")

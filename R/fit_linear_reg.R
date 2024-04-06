@@ -12,7 +12,7 @@
 #' @export
 #'
 #' @examples
-#' fit_linear_reg(quality ~ ., training)
+#' fit_linear_reg(mpg ~ ., mtcars)
 fit_linear_reg <- function(formula, data_frame) {
   # Specify linear regression
   lm_spec <- parsnip::linear_reg() %>%
