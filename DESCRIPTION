@@ -33,3 +33,4 @@ Suggests:
     workflowsets
 Config/testthat/edition: 3
 VignetteBuilder: knitr
+URL: https://dsci-310-2024.github.io/pRedictwine/
