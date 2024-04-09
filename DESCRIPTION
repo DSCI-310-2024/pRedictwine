@@ -24,9 +24,12 @@ Imports:
     workflows
 Suggests: 
     covr,
+    knitr,
     rlang,
+    rmarkdown,
     testthat (>= 3.0.0),
     tibble,
     vdiffr,
     workflowsets
 Config/testthat/edition: 3
+VignetteBuilder: knitr

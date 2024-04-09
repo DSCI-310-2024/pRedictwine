@@ -1,0 +1,122 @@
+---
+title: "pRedictwine-vignette"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{pRedictwine-vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The goal of pRedictwine is to aid in the workflow of a linear regression
+analysis. It provides functions that could aid in the steps of loading
+and tidying the data, histograms for exploratory analysis, and creating
+the linear regression model.
+
+Contains 3 functions that are aimed to help in the workflow of a linear
+regression analysis. Such functions are one to load an online dataset
+and change the columns’ names, another to create appropriate histograms,
+and a last one to directly create the linear regression model. This
+package was created mainly for the prediction of wine quality through
+MLR, found in
+<https://github.com/DSCI-310-2024/dsci-310_group-7_wine-quality-prediction>.
+
+This package is meant to be used for the programming language R. The
+version of R used to create this project was 4.3.2. Where pRedictwine
+sits in the package ecosystem for R is in a bundle along with other
+packages that aid in loading and wrangling data (readr and tidyverse),
+creating histograms (ggplot2), and creating a fitted linear regression
+model (parsnip and recipes). However, our package differs from the
+aforementioned ones as our functions allow the user to reach their
+desired end product without having to use multiple functions. Instead,
+specifying with a single function does the trick.
+
+This document serves as a tutorial on how to use the 3 functions. A more general 
+overview of each function can also be seen through `?function_name`.
+
+Once you have installed the package, load the library:
+
+```{r setup}
+library(pRedictwine)
+```
+
+## 1. load_w_new_col()
+
+Loading a dataset from an URL and changing its column names:
+When you want to load an online dataset from an URL and at the same time change the names of the columns, usually you have to first load the data and then subsequently change the column names. However, with pRedictwine, you can do it all with a single function with load_W_new_col().
+
+This function takes 3 parameters:
+- dataset_path: URL to the dataset of interest as a string.
+- col_names: a vector of strings that are the column names.
+- delimiter: the dataset's delimiter as a string.
+
+Here we show an example of how to use the function through an URL that leads to the mtcars dataset. More information on mtcars is available through `?mtcars`.
+
+```{r}
+dataset_url <- "https://raw.githubusercontent.com/plotly/datasets/master/mtcars.csv"
+
+new_col_names <- c("model", "milespergallon", "cylinder_number", "displacement", "horsepower", "rear_axle_ratio", "weight", "quartermiletime", "engine", "transmission", "forwardgears", "carb")
+
+comma_delimiter <- ","
+
+loaded_dataset <- load_w_new_col(dataset_url, new_col_names, comma_delimiter)
+
+# head() loads the first 6 rows of the tibble
+head(loaded_dataset)
+```
+
+Note that the output is a tibble, and as https://tibble.tidyverse.org/ describes it, it is a "modern reimagining of the data frame". 
+
+## 2. create_histogram()
+
+If you want to create a histogram with x labels, different coloured values by group, and specifiable x-axis, y-axis, labels; you can do so with create_histogram(). Usually, with ggplot2, multiple layers have to be specified but with create_histogram(), it is possible to do so in a single function.
+
+This function takes 6 parameters:
+- df: the dataframe/tibble of interest.
+- x: the column that should serve as the x axis.
+- group: the column that should be colored by.
+- x_lab: a string for the x axis label, if required. Default is no label.
+- y_lab: a string for the y axis label, if required. Default is no label.
+- font_size: size of the font used in the histogram, if needed to be modified. Default is 10.5.
+
+Here we show an example through the mtcars dataset. This will load a histogram for the "mpg" values, colored by "am" group. We have specified the x label to be "Miles/(US) gallon", the y label to be "Count", and the font size to be 10.
+
+```{r, include = FALSE}
+library(dplyr)
+
+mtcars_mutated <- mtcars %>%
+  mutate(am = as.factor(am))
+```
+
+```{r}
+mpghistogram <- create_histogram(df = mtcars_mutated, x = mpg, group = am,
+                  x_lab = "Miles/(US) gallon", y_lab = "Count", font_size = 10)
+
+mpghistogram
+
+```
+
+## 3. fit_linear_reg()
+
+When creating fitted linear models, quite a few functions have to be used and in the correct order. This could be confusing. If you want to create a fitted linear regression model in a single step, you can do so with fit_linear_reg().
+
+This function takes 2 parameters:
+- formula: the regression formula.
+- data_frame: the data frame/tibble of interest.
+
+Here we show an example where we fit a linear regression model to predict mpg from the mtcars dataset, using all the other variables in mtcars.
+
+```{r}
+mpg_fit <- fit_linear_reg(mpg ~ ., mtcars)
+
+
+mpg_fit
+```
+
+That's all!
