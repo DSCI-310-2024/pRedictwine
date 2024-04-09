@@ -23,6 +23,7 @@ Imports:
     recipes,
     workflows
 Suggests: 
+    covr,
     rlang,
     testthat (>= 3.0.0),
     tibble,
