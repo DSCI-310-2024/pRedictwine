@@ -14,4 +14,4 @@ coverage:
         informational: true
 
 codecov: 
-  token: secret:v2::SyQdMIC/mrPa9f6H8qq442f6rfcYYBvtJBFD1GMCidZcJBh0kN9Krh9f5tjAz9PGeOB5ro39uHE/Mn2kh7nPFl8rap9fze1goCuP4vssM8Y=
+ token: b2263b91-1688-48f5-aed3-4c3d05ec26ab
