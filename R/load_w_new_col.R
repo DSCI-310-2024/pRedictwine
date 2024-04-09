@@ -25,10 +25,6 @@ load_w_new_col <- function(dataset_path, col_names, delimiter) {
     stop("`col_names` must be a vector of strings (quoted)")
   }
 
-  if(!is.character(delimiter)) {
-    stop("`load_w_new_col` expects a delimiter as a string (quoted)")
-  }
-
   loaded_dataset <- readr::read_delim(toString(dataset_path), delim = delimiter)
 
   if (ncol(loaded_dataset) != length(col_names)) {
