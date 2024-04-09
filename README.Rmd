@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 # pRedictwine
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/DSCI-310-2024/pRedictwine/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DSCI-310-2024/pRedictwine/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/DSCI-310-2024/pRedictwine/actions/workflows/check-release.yaml/badge.svg)](https://github.com/DSCI-310-2024/pRedictwine/actions/workflows/check-release.yaml)
 [![codecov](https://codecov.io/gh/DSCI-310-2024/pRedictwine/graph/badge.svg?token=nTh5WN6FEe)](https://codecov.io/gh/DSCI-310-2024/pRedictwine)
 <!-- badges: end -->
 
