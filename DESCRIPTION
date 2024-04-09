@@ -3,8 +3,8 @@ Title: Aids in the workflow of a linear regression analysis
 Version: 0.0.1
 Authors@R: c(
     person("Rui", "Xiang Yu", , "xxiangyu@student.ubc.ca", role = c("aut", "cre")),
-    person("Rico", "Chan", , "xxiangyu@student.ubc.ca", role = "aut"),
-    person("Kevin", "Yu", , "xxiangyu@student.ubc.ca", role = "aut"))
+    person("Rico", "Chan", , "chanrico@student.ubc.ca", role = "aut"),
+    person("Kevin", "Yu", , "keroia@student.ubc.ca", role = "aut"))
 Description: Contains 3 functions that are aimed to help in the workflow of a linear 
     regression analysis. Such functions are one to load an online dataset and change the 
     columns' names, another to create appropriate histograms, and a last one to directly 
