@@ -5,8 +5,8 @@
 
 <!-- badges: start -->
 
-[![R-CMD-check](https://github.com/DSCI-310-2024/pRedictwine/actions/workflows/check-release.yaml/badge.svg)](https://github.com/DSCI-310-2024/pRedictwine/actions/workflows/check-release.yaml)
 [![codecov](https://codecov.io/gh/DSCI-310-2024/pRedictwine/graph/badge.svg?token=nTh5WN6FEe)](https://codecov.io/gh/DSCI-310-2024/pRedictwine)
+[![R-CMD-check](https://github.com/DSCI-310-2024/pRedictwine/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/DSCI-310-2024/pRedictwine/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of pRedictwine is to aid in the workflow of a linear regression
