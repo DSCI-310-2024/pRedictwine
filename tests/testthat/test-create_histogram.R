@@ -1,7 +1,8 @@
 library(vdiffr)
 library(rlang)
 
-test_that("Function should produce an error if incorrect types are passed into each of the arguments", {
+test_that("`create_histogram` should produce an error if incorrect types 
+          are passed into each of the arguments", {
   
   expect_error(create_histogram(df="yo", x=speed, group=group))
   

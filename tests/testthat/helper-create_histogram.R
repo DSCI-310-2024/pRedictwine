@@ -13,11 +13,11 @@ simple_histogram <- simple_dataset %>%
                  legend.position="none")
 
 # create simple histogram but with default settings
-simple_histogram <- simple_dataset %>%
+simple_histogram_default_settings <- simple_dataset %>%
   ggplot2::ggplot(ggplot2::aes(x = speed)) +
   ggplot2::geom_histogram(ggplot2::aes(color = group, fill = group)) +
   ggplot2::xlab("") +
   ggplot2::ylab("") +
-  ggplot2::theme(text = ggplot2::element_text(size=12.5),
+  ggplot2::theme(text = ggplot2::element_text(size=10.5),
                  legend.position="none",
                  axis.title.y = ggplot2::element_blank())
