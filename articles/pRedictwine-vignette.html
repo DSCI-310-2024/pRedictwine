@@ -103,9 +103,12 @@ want to load an online dataset from an URL and at the same time change
 the names of the columns, usually you have to first load the data and
 then subsequently change the column names. However, with pRedictwine,
 you can do it all with a single function with load_W_new_col().</p>
-<p>This function takes 3 parameters: - dataset_path: URL to the dataset
-of interest as a string. - col_names: a vector of strings that are the
-column names. - delimiter: the dataset’s delimiter as a string.</p>
+<p>This function takes 3 parameters:</p>
+<ul>
+<li>dataset_path: URL to the dataset of interest as a string.</li>
+<li>col_names: a vector of strings that are the column names.</li>
+<li>delimiter: the dataset’s delimiter as a string.</li>
+</ul>
 <p>Here we show an example of how to use the function through an URL
 that leads to the mtcars dataset. More information on mtcars is
 available through <code><a href="https://rdrr.io/r/datasets/mtcars.html" class="external-link">?mtcars</a></code>.</p>
@@ -150,13 +153,18 @@ values by group, and specifiable x-axis, y-axis, labels; you can do so
 with create_histogram(). Usually, with ggplot2, multiple layers have to
 be specified but with create_histogram(), it is possible to do so in a
 single function.</p>
-<p>This function takes 6 parameters: - df: the dataframe/tibble of
-interest. - x: the column that should serve as the x axis. - group: the
-column that should be colored by. - x_lab: a string for the x axis
-label, if required. Default is no label. - y_lab: a string for the y
-axis label, if required. Default is no label. - font_size: size of the
-font used in the histogram, if needed to be modified. Default is
-10.5.</p>
+<p>This function takes 6 parameters:</p>
+<ul>
+<li>df: the dataframe/tibble of interest.</li>
+<li>x: the column that should serve as the x axis.</li>
+<li>group: the column that should be colored by.</li>
+<li>x_lab: a string for the x axis label, if required. Default is no
+label.</li>
+<li>y_lab: a string for the y axis label, if required. Default is no
+label.</li>
+<li>font_size: size of the font used in the histogram, if needed to be
+modified. Default is 10.5.</li>
+</ul>
 <p>Here we show an example through the mtcars dataset. This will load a
 histogram for the “mpg” values, colored by “am” group. We have specified
 the x label to be “Miles/(US) gallon”, the y label to be “Count”, and
@@ -176,8 +184,11 @@ the font size to be 10.</p>
 used and in the correct order. This could be confusing. If you want to
 create a fitted linear regression model in a single step, you can do so
 with fit_linear_reg().</p>
-<p>This function takes 2 parameters: - formula: the regression formula.
-- data_frame: the data frame/tibble of interest.</p>
+<p>This function takes 2 parameters:</p>
+<ul>
+<li>formula: the regression formula.</li>
+<li>data_frame: the data frame/tibble of interest.</li>
+</ul>
 <p>Here we show an example where we fit a linear regression model to
 predict mpg from the mtcars dataset, using all the other variables in
 mtcars.</p>
