@@ -1,8 +1,8 @@
-library(tibble)
-
+library(tidyverse)
+source("../../R/create_histogram.R")
 # creating a simple dataset
 
-simple_dataset <- tibble::tibble(speed = cars$speed,
+simple_dataset <- tibble(speed = cars$speed,
                          group = c(rep("A", 5), rep("B", 10), rep("C", 10), rep("D", 10), rep("E", 10), rep("F", 5)))
 simple_dataset
 
