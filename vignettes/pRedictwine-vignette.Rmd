@@ -52,6 +52,7 @@ Loading a dataset from an URL and changing its column names:
 When you want to load an online dataset from an URL and at the same time change the names of the columns, usually you have to first load the data and then subsequently change the column names. However, with pRedictwine, you can do it all with a single function with load_W_new_col().
 
 This function takes 3 parameters:
+
 - dataset_path: URL to the dataset of interest as a string.
 - col_names: a vector of strings that are the column names.
 - delimiter: the dataset's delimiter as a string.
@@ -78,6 +79,7 @@ Note that the output is a tibble, and as https://tibble.tidyverse.org/ describes
 If you want to create a histogram with x labels, different coloured values by group, and specifiable x-axis, y-axis, labels; you can do so with create_histogram(). Usually, with ggplot2, multiple layers have to be specified but with create_histogram(), it is possible to do so in a single function.
 
 This function takes 6 parameters:
+
 - df: the dataframe/tibble of interest.
 - x: the column that should serve as the x axis.
 - group: the column that should be colored by.
@@ -91,7 +93,7 @@ Here we show an example through the mtcars dataset. This will load a histogram f
 library(dplyr)
 
 mtcars_mutated <- mtcars %>%
-  mutate(am = as.factor(am))
+  dplyr::mutate(am = as.factor(am))
 ```
 
 ```{r}
@@ -107,6 +109,7 @@ mpghistogram
 When creating fitted linear models, quite a few functions have to be used and in the correct order. This could be confusing. If you want to create a fitted linear regression model in a single step, you can do so with fit_linear_reg().
 
 This function takes 2 parameters:
+
 - formula: the regression formula.
 - data_frame: the data frame/tibble of interest.
 
